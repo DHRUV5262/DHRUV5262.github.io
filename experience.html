@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Experience & Education - Dhruv Rajvansh</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/theme.css" />
+		<link rel="stylesheet" href="assets/css/compact-footer.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Timeline Container */
+			.timeline {
+				position: relative;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px 0;
+			}
+
+			/* The Central Line */
+			.timeline::after {
+				content: '';
+				position: absolute;
+				width: 4px;
+				background-color: #eeeeee;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				margin-left: -2px;
+			}
+
+			/* Container around content */
+			.container {
+				padding: 10px 40px;
+				position: relative;
+				background-color: inherit;
+				width: 50%;
+				box-sizing: border-box;
+			}
+
+			/* The circles on the timeline */
+			.container::after {
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				right: -10px;
+				background-color: #ffffff;
+				border: 4px solid #18bfef;
+				top: 25px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+
+			/* Place Left (Education) */
+			.left {
+				left: 0;
+			}
+
+			/* Place Right (Experience) */
+			.right {
+				left: 50%;
+			}
+
+			/* Fix the circle for the right container */
+			.right::after {
+				left: -10px;
+			}
+
+			/* The actual content box */
+			.content {
+				padding: 20px 30px;
+				background-color: white;
+				position: relative;
+				border-radius: 6px;
+				border: 2px solid #eeeeee;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.content:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+				border-color: #18bfef;
+			}
+            
+            .content h3 {
+                margin-top: 0;
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .content h4 {
+                font-size: 0.9rem;
+                color: #18bfef;
+                margin-bottom: 1rem;
+            }
+            
+            .content p {
+                font-size: 0.9rem;
+                margin-bottom: 0;
+                line-height: 1.5;
+            }
+            
+            /* Icons for content */
+            .content h3 i {
+                margin-right: 10px;
+                color: #212931;
+            }
+
+			/* Media queries - Responsive timeline on smaller screens */
+			@media screen and (max-width: 768px) {
+				.timeline::after {
+					left: 31px;
+				}
+				
+				.container {
+					width: 100%;
+					padding-left: 70px;
+					padding-right: 25px;
+				}
+				
+				.container::after {
+					left: 21px;
+				}
+				
+				.left::after, .right::after {
+					left: 21px;
+				}
+				
+				.right {
+					left: 0%;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Dhruv Rajvansh</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li class="active"><a href="experience.html">Experience</a></li>
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/dhruv-rajvansh/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/DHRUV5262" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Experience &<br />
+									Education</h1>
+								</header>
+
+                                <div class="timeline">
+                                    <!-- Item 1: Education (Left) -->
+                                    <div class="container left">
+                                        <div class="content">
+                                            <h3><i class="fas fa-graduation-cap"></i> Master of Science, CS</h3>
+                                            <h4>USC | Aug 2024 - May 2026</h4>
+                                            <p>GPA: 3.61/4. Coursework in 3D Graphics, Animation, Database Systems, and Engine Development.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 2: Experience (Right) -->
+                                    <div class="container right">
+                                        <div class="content">
+                                            <h3><i class="fas fa-laptop-code"></i> Software Engineer</h3>
+                                            <h4>USC Creative Institute | July 2025 – Present</h4>
+                                            <p>Spearheaded Geospatial visualization platform with Unity/WebGL. Leads VITA migration to Meta Quest 3 and engineered dynamic AI personality framework.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item: Teaching Assistant (Left) -->
+                                    <div class="container left">
+                                        <div class="content">
+                                            <h3><i class="fas fa-chalkboard-teacher"></i> Teaching Assistant</h3>
+                                            <h4>USC | Jan 2025 - Dec 2025</h4>
+                                            <p><strong>ITP 359 Applied Neural Networks (Jan - Dec 2025):</strong> Graded assignments/exams and held office hours.<br>
+                                            <strong>ITP 216 Applied Python (Summer):</strong> Assisted students with Python programming concepts.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 3: Experience (Right) -->
+                                    <div class="container right">
+                                        <div class="content">
+                                            <h3><i class="fas fa-laptop-code"></i> Software Engineer Intern</h3>
+                                            <h4>IDZ Digital | Jan 2024 - July 2024</h4>
+                                            <p>Executed full development lifecycle for 13 mobile apps. Boosted frame rate by 45% via memory management and architectural improvements.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 4: Education (Left) -->
+                                    <div class="container left">
+                                        <div class="content">
+                                            <h3><i class="fas fa-graduation-cap"></i> B.Tech, Computer Engineering</h3>
+                                            <h4>Pandit Deendayal Energy University | 2020 - 2024</h4>
+                                            <p>GPA: 3.86/4. Focus on OS, Software Engineering, Big Data, Cloud Computing, and Computer Vision.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 5: Experience (Right) -->
+                                    <div class="container right">
+                                        <div class="content">
+                                            <h3><i class="fas fa-laptop-code"></i> Software Engineer Intern</h3>
+                                            <h4>Vyorius Drone | June 2023 - Aug 2023</h4>
+                                            <p>Orchestrated real-time multiplayer infrastructure with C#. Improved UI/UX and reduced network latency by 40% via state sync protocol.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                        <div class="footer-container">
+                            <div class="footer-item">
+                                <i class="fas fa-map-marker-alt"></i> Los Angeles, CA
+                            </div>
+                            <div class="footer-item">
+                                <i class="fas fa-envelope"></i> <a href="mailto:drajvans@usc.edu">drajvans@usc.edu</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.linkedin.com/in/dhruv-rajvansh/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/DHRUV5262" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

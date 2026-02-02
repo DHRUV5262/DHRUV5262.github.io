@@ -1,0 +1,61 @@
+/* Features Grid for "What I Do" */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.1);
+}
+
+.feature-item h3 {
+    color: var(--text-highlight);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-item h3 i {
+    color: var(--accent-purple);
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Two-column layout for "Currently" & "Beyond Code" */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 736px) {
+    .col-6 {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}

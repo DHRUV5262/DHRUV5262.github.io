@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Dhruv Rajvansh</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/theme.css" />
+		<link rel="stylesheet" href="assets/css/projects-grid.css" />
+		<link rel="stylesheet" href="assets/css/compact-footer.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Dhruv Rajvansh</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/dhruv-rajvansh/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/DHRUV5262" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<!-- Removed Featured Post to unify grid layout as requested -->
+
+						<!-- Posts Grid -->
+							<section class="posts">
+								<!-- Project 1: AIMLAB -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/AimLab.png" alt="AIMLAB Screenshot" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">OpenGL | C++</span>
+											<h2><a href="#">AIMLAB AIMING:<br />OpenGL</a></h2>
+										</header>
+										<p>A 3D first-person shooting game featuring real-time target interaction, custom 3D rendering engine, and physics-based hit detection.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="AIMLAB AIMING: OpenGL"
+												data-tags="OpenGL, C++, 3D Rendering, Physics"
+												data-video="https://www.youtube.com/embed/fv3iVjWrfR0?origin=http://localhost:5500" 
+												data-github="https://github.com/DHRUV5262/AIM-LAB-OpenGL">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Developed a 3D first-person shooting game where players aim and shoot at sphere targets using OpenGL and C++. Implemented real-time target interaction with instant hit detection using ray-sphere intersection algorithms instead of traditional projectile physics.</li>
+												<li>Created a complete 3D rendering system featuring OBJ file parsing for loading gun meshes, vertex buffer management with VAO/VBO/EBO, and transformation matrices for model positioning, rotation, and scaling.</li>
+												<li>Integrated immersive visual elements including skybox rendering using cube mapping techniques with 6-face textures, shader program management for 3D transformations, and efficient mesh rendering system.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 2: PRIME ENGINE -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/PrimeEngine.png" alt="Prime Engine Screenshot" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">C++ | DirectX 12 | Python</span>
+											<h2><a href="#">PRIME ENGINE:<br />Optimization</a></h2>
+										</header>
+										<p>Engine optimization project focusing on Data-Driven LOD pipelines, skeletal animation throttling, and scene graph efficiency.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="PRIME ENGINE: Optimization"
+												data-tags="C++, Lua, Python, DirectX 12, Optimization"
+												data-video="https://www.youtube.com/embed/ZOJNjfyskPc?origin=http://localhost:5500" 
+												data-github="https://github.com/DHRUV5262/3d-Pot-Rendering-">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Engineered Data-Driven LOD Pipeline: Designed a flexible asset pipeline using Python meta-files and Lua binding, allowing artists to configure Level of Detail (LOD) settings and spawn objects without requiring C++ recompilation.</li>
+												<li>Optimized Skeletal Animation System: Implemented a distance-based update throttling system that dynamically reduces animation rates for distant characters (e.g., from 30 FPS to 0.5 FPS) while preserving playback smoothness via time accumulation.</li>
+												<li>Core Engine Architecture Integration: Extended PrimeEngine's scene graph and component systems to support runtime mesh swapping and cull-state management, significantly reducing rendering and CPU overhead for complex scenes.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 3: Weather Simulation -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/WeatherSim.png" alt="Weather Sim" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">Unity | C# | Shaders</span>
+											<h2><a href="#">Weather<br />Simulation</a></h2>
+										</header>
+										<p>Sophisticated weather system featuring volumetric clouds, dynamic day-night cycles, and procedural terrain generation.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="Weather Simulation"
+												data-tags="Unity, C#, HLSL, Volumetric Rendering"
+												data-video="https://www.youtube.com/embed/Nhz2lmnc5V4?origin=http://localhost:5500" 
+												data-github="https://dhruv-portfolio.my.canva.site/weather-simulation-portfolio">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Created a weather simulation system in Unity featuring volumetric cloud rendering using ray-marching, dynamic day-night cycle with custom shaders, procedural terrain generation with Perlin Noise, and real-time water effects and rain simulation.</li>
+												<li>This project highlights expertise in shader programming and procedural generation.</li>
+												<li>Optimized rendering performance for real-time applications.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 4: AI Companion -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/Pack.png" alt="AI Companion" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">Unity | AI | Behavior Trees</span>
+											<h2><a href="#">AI Companion<br />Esther</a></h2>
+										</header>
+										<p>Advanced AI character implementation using NavMesh, Behavior Trees, and State Machines for complex decision making.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="AI Companion Development"
+												data-tags="Unity, C#, AI, NavMesh, Behavior Designer"
+												data-video="https://www.youtube.com/embed/loSl6hF5oJc?origin=http://localhost:5500" 
+												data-github="#">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Designed and implemented AI behavior for Esther, a human companion character, using Unity's NavMeshAgent for navigation and Behavior Designer for decision-making through a complex behavior tree.</li>
+												<li>Created a sophisticated state machine enabling seamless transitions between behaviors.</li>
+												<li>Developed AI routines that allow Esther to actively participate in environmental puzzles.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 5: 3D Graphics Engine -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/3d-Graphic.png" alt="3D Graphics" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">OpenGL | C++ | Rendering</span>
+											<h2><a href="#">3D Graphics<br />Engine</a></h2>
+										</header>
+										<p>High-performance rendering engine implementing Phong shading, texture mapping, and perspective-correct interpolation.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="3D Graphics Rendering Engine"
+												data-tags="OpenGL, C++, Rendering, Shaders"
+												data-video="image" 
+												data-image="images/3d.png"
+												data-github="#">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Engineered a high-performance 3D graphics engine using OpenGL and C++, implementing advanced lighting models (Flat, Gouraud, Phong shading) and sophisticated texture mapping techniques.</li>
+												<li>Developed robust vertex transformation pipelines and perspective-correct interpolation.</li>
+												<li>Optimized rendering quality through anti-aliasing and efficient buffer management.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 6: SpaceLock -->
+								<article class="project-card">
+									<div class="image">
+										<img src="images/SpaceLock.png" alt="SpaceLock" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">Unity | C# | Physics</span>
+											<h2><a href="#">SpaceLock<br />Platformer</a></h2>
+										</header>
+										<p>Physics-based 3D platformer with unique grapple mechanics and constant directional force gameplay.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="SpaceLock Platformer"
+												data-tags="Unity, C#, Physics, Gameplay"
+												data-video="https://www.youtube.com/embed/gDyvLZWLJbs?origin=http://localhost:5500" 
+												data-github="#">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li>Physics-based 3D platformer where players navigate floating objects in a unique environment.</li>
+												<li>Features a limited grapple system combined with constant pulling force in one direction, creating intense and dynamic movement.</li>
+												<li>Survival gameplay pressures players to make rapid decisions.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+							</section>
+
+						<!-- Modal Structure -->
+						<div id="project-modal" class="modal-overlay">
+							<div class="modal-content">
+								<span class="modal-close">&times;</span>
+								<div class="modal-video-container" id="modal-media-container">
+									<!-- Dynamic Content: Video, Gallery, or Single Image -->
+									<iframe id="modal-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div id="modal-gallery" class="modal-gallery-grid" style="display:none;">
+                                        <!-- Images injected here -->
+                                    </div>
+                                    <img id="modal-single-image" src="" alt="Project Image" style="display:none; width:100%; height:auto; object-fit:contain; max-height: 500px;" />
+								</div>
+								<div class="modal-details">
+									<h2 id="modal-title">Project Title</h2>
+									<div id="modal-tags" class="modal-tags">
+										<!-- Tags injected here -->
+									</div>
+									<div id="modal-description" class="modal-description">
+										<!-- Bullets injected here -->
+									</div>
+									<div class="modal-actions">
+										<a id="modal-github" href="#" target="_blank" class="button primary">View Code on GitHub</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                        <div class="footer-container">
+                            <div class="footer-item">
+                                <i class="fas fa-map-marker-alt"></i> Los Angeles, CA
+                            </div>
+                            <div class="footer-item">
+                                <i class="fas fa-envelope"></i> <a href="mailto:drajvans@usc.edu">drajvans@usc.edu</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.linkedin.com/in/dhruv-rajvansh/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/DHRUV5262" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

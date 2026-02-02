@@ -1,0 +1,99 @@
+/* Resume Button Styling */
+
+.resume-section {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(10, 14, 39, 0.4);
+    border-radius: 12px;
+    border: 1px dashed var(--accent-purple-dim);
+}
+
+.resume-section h3 {
+    margin-bottom: 2rem;
+    color: var(--text-highlight);
+    font-size: 1.5rem;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bg-dark) !important;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    z-index: 1;
+}
+
+/* Hover Effects */
+.resume-btn:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 15px rgba(179, 136, 255, 0.5), 0 0 30px rgba(0, 217, 255, 0.3);
+    color: white !important;
+}
+
+.resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.resume-btn:hover::before {
+    opacity: 1;
+}
+
+/* Icon Animation */
+.resume-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.resume-btn:hover i {
+    transform: translateY(2px);
+}
+
+/* Glow Pulse Animation (Subtle) */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 217, 255, 0.5), 0 0 8px rgba(179, 136, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    }
+}
+
+.resume-btn {
+    animation: pulse-glow 3s infinite;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+    .resume-btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}

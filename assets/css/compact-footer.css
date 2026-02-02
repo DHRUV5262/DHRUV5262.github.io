@@ -1,0 +1,122 @@
+/* Compact Footer Design */
+
+#footer {
+    background-color: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    display: block !important; /* Override flex */
+}
+
+/* Remove old specific layout styles */
+#footer .split, 
+#footer .split > *,
+#footer .alt {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+}
+
+/* Container for footer content */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Footer Items */
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.footer-item i {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+}
+
+.footer-item a {
+    color: var(--text-muted);
+    border-bottom: none;
+    transition: color 0.3s ease;
+}
+
+.footer-item a:hover {
+    color: var(--accent-cyan) !important;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-bottom: 1px solid var(--border-color); /* Fix border override */
+}
+
+.footer-social a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--bg-dark) !important;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+    border-color: transparent;
+    box-shadow: 0 0 15px var(--accent-cyan);
+}
+
+.footer-social i {
+    font-size: 1.1rem;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    width: 80%;
+}
+
+.footer-copyright a {
+    color: var(--text-muted);
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright a:hover {
+    color: var(--accent-cyan) !important;
+    border-bottom-color: transparent;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .footer-item {
+        justify-content: center;
+    }
+}
