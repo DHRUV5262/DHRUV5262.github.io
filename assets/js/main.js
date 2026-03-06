@@ -324,6 +324,23 @@
                     // Insert after GitHub button
                     modalGithub.parentNode.insertBefore(newPlayBtn, modalGithub.nextSibling);
                 }
+
+                // Paper Button Logic
+                const paperBtn = document.getElementById('modal-paper');
+                if (paperBtn) paperBtn.remove(); // Remove existing paper button to avoid duplicates
+
+                if (btn.dataset.paper && btn.dataset.paper !== "") {
+                    const newPaperBtn = document.createElement('a');
+                    newPaperBtn.id = 'modal-paper';
+                    newPaperBtn.href = btn.dataset.paper;
+                    newPaperBtn.target = '_blank';
+                    newPaperBtn.className = 'button primary';
+                    newPaperBtn.textContent = 'Read Paper';
+                    newPaperBtn.style.marginLeft = '1rem';
+                    
+                    // Insert after GitHub button (or Play button if it exists)
+                    modalGithub.parentNode.appendChild(newPaperBtn);
+                }
 				
                 // Handle Video vs Gallery vs Single Image
                 if (btn.dataset.video === 'gallery') {
