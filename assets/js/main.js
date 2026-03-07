@@ -341,6 +341,23 @@
                     // Insert after GitHub button (or Play button if it exists)
                     modalGithub.parentNode.appendChild(newPaperBtn);
                 }
+
+                // Demo Button Logic
+                const demoBtn = document.getElementById('modal-demo');
+                if (demoBtn) demoBtn.remove(); // Remove existing demo button to avoid duplicates
+
+                if (btn.dataset.demo && btn.dataset.demo !== "") {
+                    const newDemoBtn = document.createElement('a');
+                    newDemoBtn.id = 'modal-demo';
+                    newDemoBtn.href = btn.dataset.demo;
+                    newDemoBtn.target = '_blank';
+                    newDemoBtn.className = 'button primary';
+                    newDemoBtn.textContent = 'View Demo';
+                    newDemoBtn.style.marginLeft = '1rem';
+                    
+                    // Insert after GitHub button (or Play/Paper button if they exist)
+                    modalGithub.parentNode.appendChild(newDemoBtn);
+                }
 				
                 // Handle Video vs Gallery vs Single Image
                 if (btn.dataset.video === 'gallery') {

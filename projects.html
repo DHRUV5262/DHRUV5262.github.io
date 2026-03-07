@@ -47,29 +47,31 @@
 
 						<!-- Posts Grid -->
 							<section class="posts">
-								<!-- Project 1: GPU Particle Simulation -->
+								<!-- Project 1: Interactive WebXR Visualization Platform -->
 								<article class="project-card">
 									<div class="image">
-										<img src="https://img.youtube.com/vi/bb25BE96NV0/mqdefault.jpg" alt="GPU Particle Simulation" />
+										<img src="images/pic08.jpg" alt="WebXR Platform" />
 									</div>
 									<div class="content">
 										<header>
-											<span class="date">CUDA | C++ | Python</span>
-											<h2><a href="#">GPU Particle<br />Simulation</a></h2>
+											<span class="date">Three.js | WebXR | WebGL</span>
+											<h2><a href="#">Interactive WebXR<br />Platform</a></h2>
 										</header>
-										<p>High-performance physics simulation benchmarking CPU vs GPU backends with memory layout optimization.</p>
+										<p>Modular WebXR platform featuring teleoperated IK arms, 360° streaming, and instanced rendering.</p>
 										<ul class="actions">
 											<li><a href="#" class="button view-project-btn" 
-												data-title="GPU-Accelerated Particle Simulation"
-												data-tags="CUDA, C++, Python, SDL2, Performance Tuning"
-												data-video="https://www.youtube.com/embed/bb25BE96NV0" 
-												data-github="https://github.com/DHRUV5262/-GPU-Accelerated-Particle-Simulation-with-CPU-baseline">View Project</a></li>
+												data-title="Interactive WebXR Visualization Platform"
+												data-tags="Three.js, WebXR, WebGL, GLSL, JavaScript"
+												data-video="image" 
+												data-image="images/pic08.jpg"
+												data-github="https://github.com/DHRUV5262/WebXR"
+                                                data-demo="https://dhruv5262.github.io/WebXR/">View Project</a></li>
 										</ul>
 										<div class="hidden-details" style="display:none;">
 											<ul>
-												<li><strong>Simulation Architecture:</strong> Implemented five distinct physics backends (CPU, GPU AoS, GPU SoA fused/unfused) to benchmark spring-physics systems, utilizing Python scripts to analyze performance scaling up to 400K particles.</li>
-												<li><strong>Memory Optimization:</strong> Analyzed GPU memory access patterns, proving unfused SoA bottlenecks against naive AoS and demonstrating how kernel fusion combined with block-size auto-tuning (128/256/512) maximizes throughput.</li>
-												<li><strong>Interactive Visualization:</strong> Developed a real-time SDL2 visualizer with live solver switching to empirically demonstrate floating-point non-associativity and deterministic divergence across parallel execution models.</li>
+												<li><strong>VR Teleoperation with IK:</strong> Built a WebXR prototype where the user's right hand drives a 4-link robot arm in real time using CCD Inverse Kinematics with bend limits and damping. Implemented thumb-middle pinch for gripper control and visual heat trails for tracking errors.</li>
+												<li><strong>Modular World Architecture:</strong> Designed a scalable World Manager that loads isolated 3D environments (360° video, depth panoramas, instanced shapes) with no shared state, enabling seamless switching between six distinct graphical demos.</li>
+												<li><strong>Streaming & Optimization:</strong> Implemented chunked HTTP byte-range streaming for 60 FPS 360° video playback and utilized GPU instancing to render thousands of floating shapes in a single draw call, optimizing performance for mobile VR headsets.</li>
 											</ul>
 										</div>
 									</div>
@@ -98,6 +100,34 @@
 												<li>Engineered Data-Driven LOD Pipeline: Designed a flexible asset pipeline using Python meta-files and Lua binding, allowing artists to configure Level of Detail (LOD) settings and spawn objects without requiring C++ recompilation.</li>
 												<li>Optimized Skeletal Animation System: Implemented a distance-based update throttling system that dynamically reduces animation rates for distant characters (e.g., from 30 FPS to 0.5 FPS) while preserving playback smoothness via time accumulation.</li>
 												<li>Core Engine Architecture Integration: Extended PrimeEngine's scene graph and component systems to support runtime mesh swapping and cull-state management, significantly reducing rendering and CPU overhead for complex scenes.</li>
+											</ul>
+										</div>
+									</div>
+								</article>
+
+								<!-- Project 3: GPU Particle Simulation -->
+								<article class="project-card">
+									<div class="image">
+										<img src="https://img.youtube.com/vi/bb25BE96NV0/mqdefault.jpg" alt="GPU Particle Simulation" />
+									</div>
+									<div class="content">
+										<header>
+											<span class="date">CUDA | C++ | Python</span>
+											<h2><a href="#">GPU Particle<br />Simulation</a></h2>
+										</header>
+										<p>High-performance physics simulation benchmarking CPU vs GPU backends with memory layout optimization.</p>
+										<ul class="actions">
+											<li><a href="#" class="button view-project-btn" 
+												data-title="GPU-Accelerated Particle Simulation"
+												data-tags="CUDA, C++, Python, SDL2, Performance Tuning"
+												data-video="https://www.youtube.com/embed/bb25BE96NV0" 
+												data-github="https://github.com/DHRUV5262/-GPU-Accelerated-Particle-Simulation-with-CPU-baseline">View Project</a></li>
+										</ul>
+										<div class="hidden-details" style="display:none;">
+											<ul>
+												<li><strong>Simulation Architecture:</strong> Implemented five distinct physics backends (CPU, GPU AoS, GPU SoA fused/unfused) to benchmark spring-physics systems, utilizing Python scripts to analyze performance scaling up to 400K particles.</li>
+												<li><strong>Memory Optimization:</strong> Analyzed GPU memory access patterns, proving unfused SoA bottlenecks against naive AoS and demonstrating how kernel fusion combined with block-size auto-tuning (128/256/512) maximizes throughput.</li>
+												<li><strong>Interactive Visualization:</strong> Developed a real-time SDL2 visualizer with live solver switching to empirically demonstrate floating-point non-associativity and deterministic divergence across parallel execution models.</li>
 											</ul>
 										</div>
 									</div>
