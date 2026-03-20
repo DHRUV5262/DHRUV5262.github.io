@@ -12,7 +12,29 @@
 		<link rel="stylesheet" href="assets/css/compact-footer.css" />
 		<link rel="stylesheet" href="assets/css/about-features.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 		<style>
+			/* Hero canvas background */
+			#intro {
+				position: relative;
+				overflow: hidden;
+			}
+			#hero-canvas {
+				position: absolute;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				z-index: 0;
+				pointer-events: none;
+			}
+			#intro h1,
+			#intro p,
+			#intro .actions {
+				position: relative;
+				z-index: 1;
+			}
+			@media (max-width: 768px) {
+				#hero-canvas { display: none; }
+			}
 			/* Custom styles for profile image */
 			.image.profile {
 				display: block;
@@ -49,6 +71,7 @@
 
 				<!-- Intro -->
 					<div id="intro">
+						<canvas id="hero-canvas"></canvas>
 						<h1>Dhruv Rajvansh<br />
 						<span class="gradient-text">Software Engineer | Systems &amp; Graphics</span></h1>
 						<p>CS grad student at USC graduating May 2026. I work across the stack — C++, graphics, web, system and pick things up fast. Strong in performance and low-level work but comfortable wherever the problem is.</p>
@@ -212,6 +235,146 @@
 					</footer>
 
 			</div>
+
+		<!-- Hero particle canvas -->
+		<script>
+		(function () {
+			if (window.innerWidth <= 768) return;
+
+			var canvas = document.getElementById('hero-canvas');
+			var intro  = document.getElementById('intro');
+			if (!canvas || !intro || typeof THREE === 'undefined') return;
+
+			var W = intro.offsetWidth;
+			var H = intro.offsetHeight;
+
+			var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			renderer.setSize(W, H);
+			renderer.setClearColor(0x000000, 0);
+
+			var scene  = new THREE.Scene();
+			var camera = new THREE.OrthographicCamera(0, W, 0, H, -1, 1);
+
+			var NUM   = 120;
+			var LINE_DIST = 130;
+			var mouse = { x: W / 2, y: H / 2 };
+
+			/* ---- particles ---- */
+			var positions = [];
+			for (var i = 0; i < NUM; i++) {
+				positions.push({
+					x:  Math.random() * W,
+					y:  Math.random() * H,
+					vx: (Math.random() - 0.5) * 0.35,
+					vy: (Math.random() - 0.5) * 0.35
+				});
+			}
+
+			/* dot geometry */
+			var dotGeo  = new THREE.BufferGeometry();
+			var dotPos  = new Float32Array(NUM * 3);
+			var dotColors = new Float32Array(NUM * 3);
+			var purple = new THREE.Color('#7c6bff');
+			var cyan   = new THREE.Color('#00d4ff');
+			for (var i = 0; i < NUM; i++) {
+				var c = Math.random() < 0.5 ? purple : cyan;
+				dotColors[i * 3]     = c.r;
+				dotColors[i * 3 + 1] = c.g;
+				dotColors[i * 3 + 2] = c.b;
+			}
+			dotGeo.setAttribute('position', new THREE.BufferAttribute(dotPos, 3));
+			dotGeo.setAttribute('color',    new THREE.BufferAttribute(dotColors, 3));
+			var dotMat = new THREE.PointsMaterial({
+				size: 3.5,
+				vertexColors: true,
+				transparent: true,
+				opacity: 0.85
+			});
+			var dots = new THREE.Points(dotGeo, dotMat);
+			scene.add(dots);
+
+			/* line geometry — pre-allocate for worst case */
+			var MAX_SEGS = NUM * NUM;
+			var linePos = new Float32Array(MAX_SEGS * 6);
+			var lineCol = new Float32Array(MAX_SEGS * 6);
+			var lineGeo = new THREE.BufferGeometry();
+			lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
+			lineGeo.setAttribute('color',    new THREE.BufferAttribute(lineCol, 3));
+			var lineMat = new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({
+				vertexColors: true,
+				transparent: true,
+				opacity: 0.25
+			}));
+			scene.add(lineMat);
+
+			/* ---- mouse parallax ---- */
+			document.addEventListener('mousemove', function (e) {
+				var rect = intro.getBoundingClientRect();
+				mouse.x = e.clientX - rect.left;
+				mouse.y = e.clientY - rect.top;
+			});
+
+			/* ---- resize ---- */
+			window.addEventListener('resize', function () {
+				if (window.innerWidth <= 768) { renderer.domElement.style.display = 'none'; return; }
+				W = intro.offsetWidth;
+				H = intro.offsetHeight;
+				renderer.setSize(W, H);
+				camera.right  = W;
+				camera.bottom = H;
+				camera.updateProjectionMatrix();
+			});
+
+			/* ---- animate ---- */
+			function animate() {
+				requestAnimationFrame(animate);
+
+				var mx = (mouse.x / W - 0.5) * 18;
+				var my = (mouse.y / H - 0.5) * 18;
+
+				for (var i = 0; i < NUM; i++) {
+					var p = positions[i];
+					p.x += p.vx + mx * 0.0012;
+					p.y += p.vy + my * 0.0012;
+					if (p.x < 0) p.x = W;
+					if (p.x > W) p.x = 0;
+					if (p.y < 0) p.y = H;
+					if (p.y > H) p.y = 0;
+					dotPos[i * 3]     = p.x;
+					dotPos[i * 3 + 1] = p.y;
+					dotPos[i * 3 + 2] = 0;
+				}
+				dotGeo.attributes.position.needsUpdate = true;
+
+				/* rebuild lines */
+				var seg = 0;
+				for (var i = 0; i < NUM - 1; i++) {
+					for (var j = i + 1; j < NUM; j++) {
+						var dx = positions[i].x - positions[j].x;
+						var dy = positions[i].y - positions[j].y;
+						var d  = Math.sqrt(dx * dx + dy * dy);
+						if (d < LINE_DIST) {
+							var alpha = 1 - d / LINE_DIST;
+							var ci = i * 3, cj = j * 3;
+							var s6 = seg * 6;
+							linePos[s6]     = positions[i].x; linePos[s6 + 1] = positions[i].y; linePos[s6 + 2] = 0;
+							linePos[s6 + 3] = positions[j].x; linePos[s6 + 4] = positions[j].y; linePos[s6 + 5] = 0;
+							lineCol[s6]     = dotColors[ci];     lineCol[s6 + 1] = dotColors[ci + 1]; lineCol[s6 + 2] = dotColors[ci + 2];
+							lineCol[s6 + 3] = dotColors[cj];     lineCol[s6 + 4] = dotColors[cj + 1]; lineCol[s6 + 5] = dotColors[cj + 2];
+							seg++;
+						}
+					}
+				}
+				lineGeo.setDrawRange(0, seg * 2);
+				lineGeo.attributes.position.needsUpdate = true;
+				lineGeo.attributes.color.needsUpdate    = true;
+
+				renderer.render(scene, camera);
+			}
+			animate();
+		})();
+		</script>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
